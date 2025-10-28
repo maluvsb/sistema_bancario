@@ -85,12 +85,7 @@ def criar_usuario(usuarios):
     cpf_formatado = formatar_cpf_para_display(cpf)
     print(f"++++++++ Usuário com CPF {cpf_formatado} criado com sucesso! ++++++++")
 
-# FUNÇÃO OTIMIZADA COM next()
 def filtrar_usuario(cpf, usuarios):
-    """
-    Busca um usuário na lista com o CPF fornecido (11 dígitos). 
-    Usa next() para interromper a busca assim que o primeiro match é encontrado (performance).
-    """
     return next((usuario for usuario in usuarios if usuario["cpf"] == cpf), None)
 
 def criar_conta(agencia, numero_conta, usuarios):
